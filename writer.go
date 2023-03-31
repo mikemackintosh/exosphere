@@ -46,7 +46,7 @@ func Logger(next http.Handler) http.Handler {
 				stdslog.Any("response_size", rec.Size),
 				stdslog.Any("Content-length", r.ContentLength),
 				stdslog.Any("request-headers", r.Header),
-				stdslog.Any("headers", r.Header),
+				stdslog.Any("host", r.Host),
 				stdslog.Any("Content-type", r.Header.Get("Content-type")),
 				stdslog.String("user_agent", r.UserAgent()),
 			}...,
